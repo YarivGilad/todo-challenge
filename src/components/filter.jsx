@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 
-const Filter = ({ input_list, on_filter}) => {
-    let filtered_list = input_list || [];
-
+const Filter = ({ input_list, on_filter, num_of_items}) => {
+    let filtered_list = input_list;
+    const num = num_of_items;
     const filter_list = (filter_option) => {
         switch(filter_option) {
             case "open":
@@ -20,6 +20,7 @@ const Filter = ({ input_list, on_filter}) => {
                 filtered_list = input_list;
             }
         //callback on_filter with the new filtered_list.
+
         on_filter(filtered_list);
     }
 
@@ -30,7 +31,7 @@ const Filter = ({ input_list, on_filter}) => {
             <button variant="outline-primary" onClick={()=> filter_list("open")} >Open</button>
             <button variant="outline-primary" onClick={()=> filter_list("completed")} >Completed</button>
             <button variant="outline-primary" onClick={()=> filter_list("removed")} >Removed</button>
-            <Counter><b>{filtered_list.length}</b> out of {input_list.length}</Counter>
+            <Counter><b>{num}</b> out of {input_list.length}</Counter>
         </FilterBox>
     );
 };
