@@ -2,6 +2,7 @@ import React, { useState , useEffect} from "react";
 import Filter from './components/filter'
 import data from './data/data.json';
 
+//App function component is used for testing and managing State hooks
 const App  = () => {
     const [original_list, reset_list] = useState(data);
     const [filtered_list, on_filter] = useState(original_list);
