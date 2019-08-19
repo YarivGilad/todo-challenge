@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import GlobalStyles from './global.styles'
 import All_challenge from './....'
 
-const Todo = React.createContext();
 
 
-const Todos = ({ children }) => {
+const App = ({ children }) => {
   const [form, setForm] = useState([]);
   const [list, setList] = useState([]);
   const [selected_list, setSelected_List] = useState([]);
@@ -60,7 +59,7 @@ useEffect(() => {
       </Placeholder>
     </Container>
   );
-}
+}}
 
 export default App;
 
@@ -69,47 +68,10 @@ text-align: center;
 font-size: 50px`;
 
 const Container = styled.div`
-  border:red 3px solid;
+  border:red 3px solid
   
 `;
 const Placeholder = styled.div`
   border:blue 3px dashed;
-  font-size: 13rem;
-`;
-
-
-
-function App() {
-  return (
-    
-    <Container>
-      <H1>TODO LIST</H1>
-
-      <GlobalStyles/>
-      <Placeholder>
-        Form
-      </Placeholder>
-      <Placeholder>
-        List
-      </Placeholder>
-      <Placeholder>
-        Filter
-      </Placeholder>
-    </Container>
-  );
-}
-
-export default App;
-
-const H1 = styled.h1`
-text-align: center;
-font-size: 50px`;
-
-const Container = styled.div`
-  border:red 3px solid;
-  
-`;
-const Placeholder = styled.div`
-  border:blue 3px dashed;
-  font-size: 13rem;
+  font-size: 13rem
 `;
