@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PropTypes from 'prop-types';
 
 const Form = ({ add_todo }) => {
-
+  
      const [todo_text,set_todo_text] = useState('');
 
     const on_click = (event)=> {
@@ -33,15 +33,3 @@ const Form = ({ add_todo }) => {
     add_todo: PropTypes.func.isRequired,
   };
   
-//   return (
-//     <Box>
-//       <Image src={avatar} />
-//       <TextsBox>
-//         <Title>
-//           {first_name} from {country}
-//         </Title>
-//         <Msg>{description}</Msg>
-//       </TextsBox>
-//     </Box>
-//   );
-// };

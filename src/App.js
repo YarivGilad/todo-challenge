@@ -5,7 +5,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"><h1>Todo App</h1></header>
-      <TodoItem/>
+      {/* <TodoItem/> */}
+      <h1>From App</h1>
     </div>
   );
 }
