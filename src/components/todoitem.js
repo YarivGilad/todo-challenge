@@ -1,22 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import { throwStatement } from '@babel/types';
 
-function ToDoItem() {
+function ToDoItem(props) {
     
-    const [] = useState();
+    // const [] = useState();
+    state = {
+        content: this.props
+    }
   
     return (
       <div>
-      <button onClick={() => isCompleted()}>
-       completed
-      </button>
-        <p>todo list item recieved added by user</p>
-        <button>
-       remove
-      </button>
+      <button>completed</button>
+        <p>{props.item}</p>
+        <button>remove</button>
       </div>
     )
 }
 
 
+// ToDoItem.propTypes = {
+//   item: PropTypes.string
+// }
 
+export default ToDoItem;
