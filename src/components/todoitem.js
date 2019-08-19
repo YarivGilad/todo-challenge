@@ -1,26 +1,37 @@
 import React from 'react';
-import PropTypes from 'prop-types'
-import { throwStatement } from '@babel/types';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-function ToDoItem(props) {
+
+const ToDoItem = (props) => {
     
     // const [] = useState();
-    state = {
-        content: this.props
-    }
+    // state = {
+    //     content: this.props
+    // }
   
     return (
-      <div>
+      <Wrapper>
       <button>completed</button>
-        <p>{props.item}</p>
+        <h1>{props.item}</h1>
         <button>remove</button>
-      </div>
+      </Wrapper>
     )
 }
 
 
-// ToDoItem.propTypes = {
-//   item: PropTypes.string
-// }
+ToDoItem.propTypes = {
+  item: PropTypes.string
+}
 
 export default ToDoItem;
+
+
+
+
+const Wrapper = styled.button`
+  background: green;
+  border-radius: 3px;
+  border: none;
+  color: white;
+`
