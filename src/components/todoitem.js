@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -16,7 +16,7 @@ const ToDoItem = (props) => {
     return (
       <div>
       <button onClick={setItemState}>completed</button>
-        <h1>{props.item}</h1>
+        <h1>{itemState.item}</h1>
         <button>remove</button>
       </div>
     )
