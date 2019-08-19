@@ -14,7 +14,7 @@ const Form = ({ add_todo }) => {
       })
     }
 
-    console.log('Text:',text)
+    // console.log('Text:',text)
     return (
       <div>
          <h1>Hello from TodoItem component</h1> 
