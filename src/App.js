@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import GlobalStyles from './global.styles'
 import All_challenge from './....'
 
-
-
 const App = ({ children }) => {
   const [form, setForm] = useState([]);
   const [list, setList] = useState([]);
