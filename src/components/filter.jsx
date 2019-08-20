@@ -8,7 +8,7 @@ const Filter = ({ input_list, on_filter, num_of_items}) => {
 
     const filter_list = (filter_option) => {
         if (filter_option)
-                filtered_list = input_list.filter(item => item.removed === filter_option);
+                filtered_list = input_list.filter(item => item.status === filter_option);
         else {
             filtered_list = input_list;
         }
