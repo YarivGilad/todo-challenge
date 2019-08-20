@@ -1,27 +1,28 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 
-const ToDoItem = (props) => {
+const ToDoItem = ({completeFunc,removeFunc,item}) => {
     
-  const [itemState,setItemState] = useState(
-    {item: props.item}
-  )
-
     return (
       <div>
-      <CompleteButton onClick={setItemState}>completed</CompleteButton>
-        <Item>{itemState.item}</Item>
-        <RemoveButton>remove</RemoveButton>
+      <CompleteButton onClick={()=> completeFunc(item.id)}>completed</CompleteButton>
+        <Item completed={item.status==='completed'}>{item.text}</Item>
+        <RemoveButton onClick={()=> removeFunc(item.id)}>remove</RemoveButton>
       </div>
     )
 }
 
-// const setItemState = (itemState.Item) => <s>itemState.item</s>
 
 ToDoItem.propTypes = {
-  item: PropTypes.string
+  item: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    status: PropTypes.oneOf(['open', 'completed','removed']).isRequired
+  }).isRequired,
+  completeFunc: PropTypes.func.isRequired,
+  removeFunc: PropTypes.func.isRequired
 }
 
 export default ToDoItem;
@@ -51,4 +52,5 @@ const RemoveButton = styled.button`
 const Item = styled.h1`
   color: #292929;
   display: inline;
+  text-decoration: ${({completed})=> completed? 'line-through' : 'none'};
 `
