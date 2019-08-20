@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 
 const Filter = ({ input_list, on_filter, num_of_items}) => {
-    let filtered_list = input_list;
+    const [selectedIndex, setSelectedIndex] = useState([])
     const num = num_of_items;
+    let filtered_list = input_list;
 
-    const filter_list = (filter_option) => {
+    const filter_list = (filter_option,index) => {
         if (filter_option)
                 filtered_list = input_list.filter(item => item.status === filter_option);
         else {
@@ -14,15 +15,16 @@ const Filter = ({ input_list, on_filter, num_of_items}) => {
         }
         //callback on_filter with the new filtered_list~
         on_filter(filtered_list);
+        setSelectedIndex(index);
     }
 
     return (
         <FilterBox>
             <Title>Filter by:</Title>
-            <Button onClick={()=> filter_list()}>All</Button>
-            <Button onClick={()=> filter_list("open")} >Open</Button>
-            <Button onClick={()=> filter_list("completed")} >Completed</Button>
-            <Button onClick={()=> filter_list("removed")} >Removed</Button>
+            <Button onClick={()=> filter_list('',0)} selected={selectedIndex === 0}>All</Button>
+            <Button onClick={()=> filter_list("open",1)} selected={selectedIndex === 1}>Open</Button>
+            <Button onClick={()=> filter_list("completed",2)} selected={selectedIndex === 2}>Completed</Button>
+            <Button onClick={()=> filter_list("removed",3)} selected={selectedIndex === 3}>Removed</Button>
             <Counter>Showing <b>{num}</b> results out of {input_list.length}</Counter>
         </FilterBox>
     );
@@ -56,8 +58,9 @@ const Button = styled.button`
     padding: 0.2rem  2rem 0.2rem;
     border-radius: 5px;
     border: 1px solid white;
+    outline: none;
+    background: ${({selected})=> selected ? "wheat": null };
     &:hover{
-        background-color: wheat;
         border-color: purple;
         cursor: pointer;
     }
