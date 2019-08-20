@@ -7,23 +7,14 @@ const Filter = ({ input_list, on_filter, num_of_items}) => {
     const num = num_of_items;
 
     const filter_list = (filter_option) => {
-        switch(filter_option) {
-            case "open":
-                filtered_list = input_list.filter(item => item.completed === false && item.removed === false);
-                break;
-            case "completed":
-                filtered_list = input_list.filter(item => item.completed === true && item.removed === false)
-                break;
-            case "removed":
-                filtered_list = input_list.filter(item => item.removed === true);
-                break;
-            default:
-                filtered_list = input_list;
-            }
-        //callback on_filter with the new filtered_list.
+        if (filter_option)
+                filtered_list = input_list.filter(item => item.removed === filter_option);
+        else {
+            filtered_list = input_list;
+        }
+        //callback on_filter with the new filtered_list~
         on_filter(filtered_list);
     }
-
 
     return (
         <FilterBox>

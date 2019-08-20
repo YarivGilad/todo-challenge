@@ -1,41 +1,31 @@
 [{
     "task": "loteprednol etabonate",
-    "completed": true,
-    "removed": false
+    "status": "open"
   }, {
     "task": "Nicotine Polacrilex",
-    "completed": true,
-    "removed": false
+    "status": "open"
   }, {
     "task": "isopropyl alcohol",
-    "completed": true,
-    "removed": false
+    "status": "open"
   }, {
     "task": "Octinoxate and Oxybenzone",
-    "completed": false,
-    "removed": false
+    "status": "open"
   }, {
     "task": "Zinc Oxide",
-    "completed": true,
-    "removed": true
+    "status": "open"
   }, {
     "task": "White Alder",
-    "completed": false,
-    "removed": false
+    "status": "completed"
   }, {
     "task": "Carvedilol",
-    "completed": true,
-    "removed": true
+    "status": "completed"
   }, {
     "task": "magnesium hydroxide",
-    "completed": true,
-    "removed": false
+    "status": "completed"
   }, {
     "task": "Tuna Fish",
-    "completed": false,
-    "removed": true
+    "status": "removed"
   }, {
     "task": "Sodium Fluoride",
-    "completed": true,
-    "removed": false
+    "status": "removed"
   }]
