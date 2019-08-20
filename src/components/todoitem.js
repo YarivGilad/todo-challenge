@@ -12,12 +12,13 @@ const ToDoItem = (props) => {
     return (
       <div>
       <CompleteButton onClick={setItemState}>completed</CompleteButton>
-        <h1>{itemState.item}</h1>
+        <Item>{itemState.item}</Item>
         <RemoveButton>remove</RemoveButton>
       </div>
     )
 }
 
+// const setItemState = (itemState.Item) => <s>itemState.item</s>
 
 ToDoItem.propTypes = {
   item: PropTypes.string
@@ -34,6 +35,7 @@ const CompleteButton = styled.button`
   margin: 0.5rem 1rem;
   width: 11rem;
   border: 2px solid #1DB954;
+  display: inline-block;
 `
 const RemoveButton = styled.button`
   background: #ff0000;
@@ -44,4 +46,9 @@ const RemoveButton = styled.button`
   margin: 0.5rem 1rem;
   width: 11rem;
   border: 2px solid #ff0000;
+  display: inline-block;
+`
+const Item = styled.h1`
+  color: #292929;
+  display: inline;
 `
