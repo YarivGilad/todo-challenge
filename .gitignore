@@ -4,6 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
+/data
+/src/App.jsx
+/src/index.css
+/src/index.js
+/src/serviceWorker.js
 
 # testing
 /coverage
