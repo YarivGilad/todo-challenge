@@ -32,7 +32,6 @@ const Filter = ({ input_list, on_filter, num_of_items}) => {
 
 export default Filter;
 
-
 const FilterBox = styled.div`
   background: aquamarine;
   position: absolute;
