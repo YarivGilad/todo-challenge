@@ -7,21 +7,20 @@ const {Provider} = Context;
 
 
 const Store = ({children}) => {
-    const [todos , setTodos] = useState([]);
-    const [toggle , setToggle] = useState(false);
+    const [todos , setTodos] = useState([
+        {id:1 , input:'sasha', complete:false},
+        {id:2 , input:'ola' , complete:false}
+    ]);
     const [input , setInput] = useState('');
     const [value ,setValue] = useState('');
 
 
     const state = {
         todos,
-        toggle,
         input,
         value
     };
     const action = {
-        
-        setToggle,
         setInput,
         setValue,
         setTodos

@@ -1,22 +1,27 @@
 import React ,{ useContext}from 'react';
 import { Context } from './store/store';
+import { Button , Input , Form } from './elements';
+
 
 const TodoList = () => {
    const {value , setValue , setInput , setTodos , todos , input} = useContext(Context);
 
     return (
-       <form onSubmit = {e => {
+       <Form onSubmit = {e => {
            e.preventDefault();
          setInput(value);
-         if(input != ''){
+         if(input !== ''){
          setTodos([{input , complete:false , id:new Date()} , ...todos]);
           setValue('');
          }
        }}>
-          <input value = {value} onChange = {e => setValue(e.target.value)} />
-          <button >add</button> 
-       </form>
+          <Input value = {value} onChange = {e => setValue(e.target.value)} />
+          <Button type = 'submit'>add</Button> 
+       </Form>
     )
 }
 
-export default TodoList
+export default TodoList;
+
+
+

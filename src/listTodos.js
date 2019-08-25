@@ -1,56 +1,36 @@
 import React, {useContext}from 'react';
 import { Context } from './store/store';
-import styled from 'styled-components'
-
+import { Li , Btn , Ul , Span} from './elements';
 
 const ListTodos = () => {
+const {todos , setTodos} = useContext(Context);
 
-    // const compledTodo = id => {
-    //     const newTodos = [...todos];
-    //     newTodos.find(id => {
-    //         id,
-    //         input,
-    //
-    //     }
-    //     setTodos(newTodos);
-    // }
+const CompletedItem = i => setTodos(todos.map((todo , k) => k === i ? {
+    ...todo,
+     complete: !todo.complete
+    } 
+    : todo
+    ));
 
+const DeleteItem = id => setTodos(todos.filter(todo => todo.id!==id));
+    
 
-    const {todos} = useContext(Context);
     return (
-        <div className= 'container'>
-                {todos.map(({input , id , complete}) => (
-                    <DIV className ='cards-list'>
-                        <Div key = {id}>{input} </Div>
+        <Ul>
+                {todos.map(({input , id , complete} , i) => (
+                    <Li>
+                        <Span key = {id} type = {complete}>{input}</Span>
                         <div>
-                            <Btn >DAN</Btn>
-                            <Btn>X</Btn>
+                           <Btn onClick = {() => CompletedItem(i)}>Complete</Btn>
+                           <Btn type = {complete} onClick = {() => DeleteItem(id)}>Delete</Btn>  
                         </div>
-                            
-                    </DIV>
+                    </Li>
                 ))}    
-        </div>
+        </Ul>
     )
 }
 
 export default ListTodos
 
 
-const Div = styled.div`
-
-
-`;
-const DIV = styled.div`
-padding: 0.5rem 0.8rem;
-    cursor: pointer;
-    display: flex;
-    // textDecoration: {complete ? 'line-through' : '' }
-    
-`;
-const Btn = styled.button`
-width: 200px;
-height: 50px;
-background: green;
-borderRadius: 20%;
-`;
 
